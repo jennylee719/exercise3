@@ -43,7 +43,7 @@ video_urls = []
 # variable i indicates the number of times that scrolls down a web page. In practice, you might want to develop different
 # interaction approach to load and view the web pages.
 
-for i in range(5):
+for i in range(10):
 
     # Create a document object model (DOM) from the raw source of the crawled web page.
     # Since you are processing a html page, 'html.parser' is chosen.
