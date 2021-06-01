@@ -10,10 +10,10 @@
 import tweepy, json, time, csv
 
 # Create a csv file to store the structured data after processing.
-csvfile = open("assets/tweets.csv", "w", newline='', encoding="utf-8") # mode a, r, w
+csvfile = open("assets/tweets_ko.csv", "w", newline='', encoding="utf-8") # mode a, r, w
 
 # All the fields of each data entry that I want to collect.
-fieldnames = ['username', 'userid', 'profile_location', 'created_at', 'text', 'retweet_count', 'source', 'coordinates']
+fieldnames = ['username', 'userid', 'profile_location', 'created_at', 'text', 'retweet_count', 'source']
 
 # Create a writer to write the structured data to the csv file.
 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -33,9 +33,8 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # Define the search term and the date_since date as variables
-search_words = "Asian hate crime"
+search_words = "코로나"
 
-location = "36.531544,-119.586168,200mi"
 # read the Twitter API document to look for other ways to customize your queries.
 # refer to https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/search-operators
 # for example: you can ignore all the retweets by #wildfires -filter:retweets
@@ -46,13 +45,13 @@ location = "36.531544,-119.586168,200mi"
 # by users whose profile location can be reverse geocoded into a lat/long within the queried geocode, meaning that is possible
 # to receive Tweets which do not include lat/long information.
 
-date_since = "2020-03-01"
+date_since = "2020-05-07"
 
 
 
 # Collect tweets
 # tweets = tweepy.Cursor(api.search, q=search_words, lang="en", since=date_since).items(100)
-tweets = tweepy.Cursor(api.search, q=search_words, geocode=location, lang="en", since=date_since).items(200)
+tweets = tweepy.Cursor(api.search, q=search_words, lang="ko", since=date_since).items(200)
 
 # Iterate and print tweets
 for tweet in tweets:
@@ -64,7 +63,7 @@ for tweet in tweets:
         'text': tweet.text,
         'retweet_count': tweet.retweet_count,
         'source': tweet.source,
-        'coordinates': tweet.coordinates
+
 
     }
     writer.writerow(row)
