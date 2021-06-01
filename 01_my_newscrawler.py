@@ -1,3 +1,8 @@
+
+# @author:          Script modified from Kihoon Kim's code
+# @description:     Collect news articles from news portal NAVER, script modified from https://creatorjo.tistory.com/87
+
+
 import requests
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
