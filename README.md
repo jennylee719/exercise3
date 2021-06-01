@@ -1,4 +1,4 @@
-**Objective for code**: This is a news crawling code to collect news articles from NAVER, one of Korea's biggest portal. This code has been set in a way that makes it possible to collect data in a chronological order (news articles' publication) within a set time frame. This code has been modified from Kihoon Kim and Creator Jo's code. They can be accessed here:https://creatorjo.tistory.com/87
+**Objective for code**: This is a news crawling code to collect news articles from NAVER, one of Korea's biggest portal. This code has been set in a way that makes it possible to collect data in a chronological order (news articles' publication) within a set time frame. This code has been modified from Kihoon Kim and Creator Jo's code. They can be accessed here: https://creatorjo.tistory.com/87 (It is in Korean so please let me know if there are areas that require translations)
 
 
 **Instructions**:
