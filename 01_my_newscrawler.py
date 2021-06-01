@@ -25,7 +25,7 @@ def scrape__news():
     ws1.title = "news scraping"
     ws1.append(["title", "url", "press", "date", "desc"])
     for page in range(50):
-        url = "https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%ED%83%9C%EC%9B%90%20%ED%81%B4%EB%9F%BD%20%EC%BD%94%EB%A1%9C%EB%82%98&sm=tab_opt&sort=0&photo=0&field=0&reporter_article=&pd=3&ds=2020.05.07&de=2020.05.07&docid=&nso=so%3Ar%2Cp%3Afrom20200507to20200507%2Ca%3Aall&mynews=0&refresh_start={}&related=0".format(str(1 + 10 * page))
+        url = "https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%ED%83%9C%EC%9B%90%20%ED%81%B4%EB%9F%BD%20%EC%BD%94%EB%A1%9C%EB%82%98&sm=tab_opt&sort=0&photo=0&field=0&reporter_article=&pd=3&ds=2020.05.07&de=2020.05.09&docid=&nso=so%3Ar%2Cp%3Afrom20200507to20200507%2Ca%3Aall&mynews=0&refresh_start={}&related=0".format(str(1 + 10 * page))
         soup = create_soup(url)
 
         articles = soup.select("#main_pack > section > div > div.group_news > ul > li")
