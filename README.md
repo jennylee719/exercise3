@@ -22,7 +22,7 @@ return soup
 
 ```
 
-Now here is the code. Write the url of the articles you want to collect. I included the dates and the query in mine. Since NAVER updates its page frequently, it is important to be able to find and select the elements you want to scrape. In this code, I scrapped the title, link, press name, date of publication, and description of the article. One thing to note here is that I made sure to scrape data in a chronological order by setting up the url query search in a way that woul collect news from 05-07 - 05-09
+Now here is the code. Write the url of the articles you want to collect. I included the dates and the query in mine. Since NAVER updates its page frequently, it is important to be able to find and select the elements you want to scrape. In this code, I scrapped the title, link, press name, date of publication, and description of the article. One thing to note here is that I made sure to scrape data in a chronological order by setting up the url query search in a way that would collect news from 05-07 to 05-09
 
 #main_pack > section > div > div.group_news > ul > li
 
@@ -36,7 +36,7 @@ def scrape__news():
     ws1.title = "news scraping"
     ws1.append(["title", "url", "press", "date", "desc"])
     for page in range(50):
-        url = "https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%ED%83%9C%EC%9B%90%20%ED%81%B4%EB%9F%BD%20%EC%BD%94%EB%A1%9C%EB%82%98&sm=tab_opt&sort=0&photo=0&field=0&reporter_article=&pd=3&ds=2020.05.07&de=2020.05.07&docid=&nso=so%3Ar%2Cp%3Afrom20200507to20200507%2Ca%3Aall&mynews=0&refresh_start={}&related=0".format(str(1 + 10 * page))
+        url = "https://search.naver.com/search.naver?where=news&query=%EC%9D%B4%ED%83%9C%EC%9B%90%20%ED%81%B4%EB%9F%BD%20%EC%BD%94%EB%A1%9C%EB%82%98&sm=tab_opt&sort=0&photo=0&field=0&reporter_article=&pd=3&ds=2020.05.07&de=2020.05.07&docid=&nso=so%3Ar%2Cp%3Afrom20200507to20200509%2Ca%3Aall&mynews=0&refresh_start={}&related=0".format(str(1 + 10 * page))
         soup = create_soup(url)
 
         articles = soup.select("#main_pack > section > div > div.group_news > ul > li")
