@@ -1,4 +1,4 @@
-**Objective for code**: This is a news crawling code to collect news articles from NAVER, one of Korea's biggest portal. This code has been modified from Kihoon Kim and Creator Jo's code. They can be accessed here:https://creatorjo.tistory.com/87
+**Objective for code**: This is a news crawling code to collect news articles from NAVER, one of Korea's biggest portal. This code has been set in a way that makes it possible to collect data in a chronological order (news articles' publication) within a set time frame. This code has been modified from Kihoon Kim and Creator Jo's code. They can be accessed here:https://creatorjo.tistory.com/87
 
 
 **Instructions**:
@@ -22,7 +22,8 @@ return soup
 
 ```
 
-Now here is the code. Write the url of the articles you want to collect. I included the dates and the query in mine. Since NAVER updates its page frequently, it is important to be able to find and select the elements you want to scrape.
+Now here is the code. Write the url of the articles you want to collect. I included the dates and the query in mine. Since NAVER updates its page frequently, it is important to be able to find and select the elements you want to scrape. In this code, I scrapped the title, link, press name, date of publication, and description of the article. One thing to note here is that I made sure to scrape data in a chronological order by setting up the url query search in a way that woul collect news from 05-07 - 05-09
+
 #main_pack > section > div > div.group_news > ul > li
 
 ```
