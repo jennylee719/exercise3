@@ -35,7 +35,7 @@ def scrape__news():
 
             ws1.append([title, link, press, date, desc])
 
-    wb.save(filename='naver_news_scraping.csv')
+    wb.save(filename='my_naver_news_scraping.xlsx')
 
 if __name__ == "__main__":
     scrape__news()
